@@ -1,4 +1,5 @@
 # Obsidian 설정 파일 제외
+.obsidian/
 .obsidian/workspace
 .obsidian/workspace.json
 .obsidian/cache
