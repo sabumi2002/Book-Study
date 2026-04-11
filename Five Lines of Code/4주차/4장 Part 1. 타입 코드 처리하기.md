@@ -124,4 +124,51 @@ enum TShirtSizes
 
 
 ### 불필요한 메서드 인라인화
+
+가독성에 도움이 되지 않는 함수 제거하기
+
+```
+-- 예제 4.52 변경 전
+handleInfut(current);
+```
+
+```
+-- 예제 4.53 변경 후
+current.handle();
+```
+
+이후 current를 input 으로 이름을 바꾸고 나면 handleInput 의 모양은 다음과 같습니다.
+
+```
+-- 예제 4.54 변경 전
+function handleInputs() {
+	while (inputs.length > 0) {
+		let current = inputs.pop();
+		handleInput(current);
+	}
+}
+
+function handleInput(input: Input) {
+	input.handle();
+}
+```
+
+```
+-- 예제 4.55 변경 후
+function handleInputs() {
+	while (inputs.length > 0) {
+		let input = inputs.pop();
+		input.handle();  // 메서드의 인라인화
+	}
+}
+
+// 삭제된 handleInput
+```
+
+**메서드의 인라인화** 리팩터링 패턴은 3장의 **메서드 추출**과 정확히 반대입니다. 
+
+
 ### 리팩터링 패턴: 메서드의 인라인화
+
+
+
