@@ -9,4 +9,5 @@
 
 # 기타 무시할 파일/폴더
 .trash/
-.history/
+_history/
+CLAUDE.md
